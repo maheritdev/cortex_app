@@ -1,3 +1,5 @@
+import 'package:cortex/core/const/colors.dart';
+import 'package:cortex/feature/auth/presentation/view/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -166,6 +168,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         // Insurance Information Card
                         if (state.profileModel?.insuranceProvider != null)
                           _buildInsuranceCard(state.profileModel!),
+                        
+                        _buildLogOutButton(),
 
                         SizedBox(height: 20),
                       ]),
@@ -745,5 +749,33 @@ class _ProfileScreenState extends State<ProfileScreen> {
     if (date == null) return null;
     // Implement your date formatting logic
     return date;
+  }
+
+  Widget _buildLogOutButton() {
+    return Container(
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.all(16),
+      color: COLORs.TopBGColor,
+      child: InkWell(
+        onTap: (){
+          SharedPreferencesHelper.clear();
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute<void>(
+              builder: (context) =>  LoginScreen(),
+            ),
+          );
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(Icons.logout,color: COLORs.White,),
+            SizedBox(width: 10),
+            Text("Logout",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),)
+          ],
+
+        ),
+      ),
+    );
   }
 }

@@ -1,5 +1,5 @@
 class ApiConst {
-  static final String BASE_URL = "https://nonequable-patronly-edythe.ngrok-free.dev";
+  static final String BASE_URL = "http://10.0.2.2:5014";
   static final String Register = "$BASE_URL/api/Auth/login";
   static final String Login = "$BASE_URL/api/Auth/login";
   static final String get_appointments = "$BASE_URL/api/Appointments/patient/";

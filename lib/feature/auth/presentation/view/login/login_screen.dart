@@ -154,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
           } else if (state is OnLoadedLoginState) {
             if (state.patientModel.userType.toString() == "Patient") {
               //await SharedPreferencesHelper.saveString("patient_name", "${state.patientModel.patient.firstName} ${state.patientModel.patient.lastName}");
-              Navigator.of(context).push(
+              Navigator.of(context).pushReplacement(
                 MaterialPageRoute<void>(
                   builder: (context) =>  BottomNavigationScreen(),
                 ),
