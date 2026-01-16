@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 controller: emailController,
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  label: Text("Email"),
+                                  label: Text("Username"),
                                   hintText: "please enter username",
                                   hintStyle: TextStyle(color: COLORs.BGColor)
 
